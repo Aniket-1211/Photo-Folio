@@ -13,10 +13,14 @@
 .box{
     width: 20%;
     height: 23vh;
-    background-color: rgb(194, 182, 182);
+    /* background-color: rgb(194, 182, 182); */
     border-radius: 10px;
     margin-right: 4%;
     margin-bottom: 5%;
+}
+
+.box:hover{
+    background-color: aqua;
 }
 
 .img{

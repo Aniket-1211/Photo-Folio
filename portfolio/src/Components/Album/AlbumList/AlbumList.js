@@ -1,13 +1,17 @@
 import styles from './AlbumList.module.css';
 import albumIcon from './albumIcon.png'
 import AlbumForm from '../AlbumForm/AlbumForm';
-import { useState } from 'react';
+import ImageList from '../../Image/ImageList/ImageList';
+import { use, useState } from 'react';
 export default function AlbumList(){
 
-    const [form,setForm]=useState(false);  // setForm to render form on the basis of true/false
+    const [form,setForm]=useState(false);  // setForm to render album form component on the basis of true/false
+    const [imageList,setImageList]=useState(false) /// setImageList to render imageList component on the basis of selected album
 
     if(form)     // passing form and setForm to render ALbum list
         return <AlbumForm form={form} setForm={setForm}></AlbumForm>
+    if(imageList)
+        return <ImageList imageList={imageList} setImageList={setImageList}></ImageList>
     return (
         <>
         {/* <AlbumForm></AlbumForm> */}
@@ -21,7 +25,7 @@ export default function AlbumList(){
 
             <div className={styles.albumsBox}>
 
-                <div className={styles.box}>
+                <div className={styles.box} onClick={()=>setImageList(!imageList)} >
                     <img className={styles.img} src={albumIcon} alt='Album Icon' />
                     <h4 className={styles.h4}>Aniket</h4>
                 </div>
